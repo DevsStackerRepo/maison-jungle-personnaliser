@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../styles/Cart.css';
+import { CartContext } from '../context';
 
-function Cart({ cart, updateCart }) {
+function Cart() {
   const [isOpen, setIsOpen] = useState(false);
+  //useContext
+  const { cart, updateCart } = useContext(CartContext);
   const total = cart.reduce(
     (acc, plantType) => acc + plantType.amount * plantType.price,
     0
