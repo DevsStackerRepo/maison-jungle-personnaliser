@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { plantList } from '../datas/plantList';
 import '../styles/ShoppingList.css';
 import Categories from './Categories';
 import PlantItem from './PlantItem';
+import { CartContext } from '../context';
 
-function ShoppingList({ cart, updateCart }) {
+function ShoppingList() {
+  const { cart, updateCart } = useContext(CartContext);
   const [activeCategory, setActiveCategory] = useState('');
   const categories = plantList.reduce(
     (acc, plant) =>
