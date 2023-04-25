@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Categories.css';
+import PropTypes from 'prop-types';
 
 function Categories({ activeCategory, setActiveCategory, categories }) {
   function handleSelect(e) {
@@ -23,5 +24,12 @@ function Categories({ activeCategory, setActiveCategory, categories }) {
     </div>
   );
 }
+
+// TypeChecking with prop-types
+Categories.propTypes = {
+  activeCategory: PropTypes.string.isRequired,
+  categories: PropTypes.array.isRequired,
+  setActiveCategory: PropTypes.func.isRequired,
+};
 
 export default Categories;
