@@ -36,6 +36,7 @@ function CareScale({ careType, scaleValue }) {
   );
 }
 
+// TypeCheking with PropTypes
 CareScale.propTypes = {
   careType: PropTypes.string.isRequired,
   scaleValue: PropTypes.number.isRequired,
