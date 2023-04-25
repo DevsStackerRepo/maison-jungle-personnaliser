@@ -1,6 +1,7 @@
 import React from 'react';
 import Sun from '../assets/sun.svg';
 import Water from '../assets/water.svg';
+import PropTypes from 'prop-types';
 
 const quantityLabel = {
   1: 'peu',
@@ -34,5 +35,11 @@ function CareScale({ careType, scaleValue }) {
     </div>
   );
 }
+
+// TypeCheking with PropTypes
+CareScale.propTypes = {
+  careType: PropTypes.string.isRequired,
+  scaleValue: PropTypes.number.isRequired,
+};
 
 export default CareScale;

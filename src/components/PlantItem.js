@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/PlantItem.css';
 import CareScale from './CareScale';
+import PropTypes from 'prop-types';
 
 function PlantItem({ name, cover, id, light, water }) {
   function handleClick(plantName) {
@@ -17,5 +18,12 @@ function PlantItem({ name, cover, id, light, water }) {
     </li>
   );
 }
+
+// TypeChecking with prop-types
+PlantItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  cover: PropTypes.string.isRequired,
+};
 
 export default PlantItem;
